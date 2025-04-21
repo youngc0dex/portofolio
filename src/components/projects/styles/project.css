@@ -65,6 +65,33 @@
 	font-weight: 700;
 }
 
+/* In-progress project styles */
+.in-progress-project {
+	background-color: #f0f0f0;
+}
+
+.in-progress-project:hover {
+	background-color: #e8e8e8;
+}
+
+.in-progress-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: calc(100% - 60px); /* Account for padding */
+}
+
+.in-progress-title {
+	padding-top: 0;
+	margin-bottom: 15px;
+}
+
+.in-progress-description {
+	text-align: center;
+}
+
 @media (max-width: 600px) {
 	.project {
 		height: 300px;

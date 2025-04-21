@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 import NavBar from "../components/common/navBar";
@@ -12,71 +12,96 @@ import SEO from "../data/seo";
 import "./styles/about.css";
 
 const About = () => {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+  const [visibleSkills, setVisibleSkills] = useState([]);
 
-	const currentSEO = SEO.find((item) => item.page === "about");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-	return (
-		<React.Fragment>
-			<Helmet>
-				<title>{`About | ${INFO.main.title}`}</title>
-				<meta name="description" content={currentSEO.description} />
-				<meta
-					name="keywords"
-					content={currentSEO.keywords.join(", ")}
-				/>
-			</Helmet>
+  useEffect(() => {
+    const showSkills = () => {
+      INFO.skill.skills.forEach((skill, index) => {
+        setTimeout(() => {
+          setVisibleSkills(prev => [...prev, skill.title]);
+        }, 200 * index);
+      });
+    };
 
-			<div className="page-content">
-				<NavBar active="about" />
-				<div className="content-wrapper">
-					<div className="about-logo-container">
-						<div className="about-logo">
-							<Logo width={46} />
-						</div>
-					</div>
+    // Delay the start of the animation to ensure other elements are loaded
+    const timer = setTimeout(() => {
+      showSkills();
+    }, 500);
 
-					<div className="about-container">
-						<div className="about-main">
-							<div className="about-right-side">
-								<div className="title about-title">
-									{INFO.about.title}
-								</div>
+    return () => clearTimeout(timer);
+  }, []);
 
-								<div className="subtitle about-subtitle">
-									{INFO.about.description}
-								</div>
-							</div>
+  const currentSEO = SEO.find((item) => item.page === "about");
 
-							<div className="about-left-side">
-								<div className="about-image-container">
-									<div className="about-image-wrapper">
-										<img
-											src="about.jpg"
-											alt="about"
-											className="about-image"
-										/>
-									</div>
-								</div>
+  return (
+    <React.Fragment>
+      <Helmet>
+        <title>{`About | ${INFO.main.title}`}</title>
+        <meta name="description" content={currentSEO.description} />
+        <meta name="keywords" content={currentSEO.keywords.join(", ")} />
+      </Helmet>
 
-								<div className="about-socials">
-									<Socials />
-								</div>
-							</div>
-						</div>
-						<div className="about-socials-mobile">
-							<Socials />
-						</div>
-					</div>
-					<div className="page-footer">
-						<Footer />
-					</div>
-				</div>
-			</div>
-		</React.Fragment>
-	);
+      <div className="page-content">
+        <NavBar active="about" />
+        <div className="content-wrapper">
+          <div className="about-logo-container">
+            <div className="about-logo">
+              <Logo width={46} />
+            </div>
+          </div>
+
+          <div className="about-container">
+            <div className="about-main">
+              <div className="about-right-side">
+                <div className="title about-title">{INFO.about.title}</div>
+
+                <div className="subtitle about-subtitle">
+                  {INFO.about.description}
+                </div>
+
+                <div className="skill-container">
+                  <div className="title skill-title">{INFO.skill.title}</div>
+                  <div className="skill-list">
+                    {INFO.skill.skills.map((skill) => (
+                      <div 
+                        className={`skill-item ${visibleSkills.includes(skill.title) ? 'skill-fade-in' : 'skill-hidden'}`} 
+                        key={skill.title}
+                      >
+                        <img src={skill.image} alt={skill.title} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="about-left-side">
+                <div className="about-image-container">
+                  <div className="about-image-wrapper">
+                    <img src="about-pp.jpg" alt="about" className="about-image" />
+                  </div>
+                </div>
+
+                <div className="about-socials">
+                  <Socials />
+                </div>
+              </div>
+            </div>
+            <div className="about-socials-mobile">
+              <Socials />
+            </div>
+          </div>
+
+          <div className="page-footer">
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
 };
 
 export default About;

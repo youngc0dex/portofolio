@@ -1,12 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faLink, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/project.css";
 
 const Project = (props) => {
-	const { logo, title, description, linkText, link } = props;
+	const { logo, title, description, linkText, link, type } = props;
+
+	if (type === "in-progress") {
+		return (
+			<div className="project in-progress-project">
+				<Link to={link}>
+					<div className="project-container in-progress-container">
+						<div className="project-warning-icon">
+							<FontAwesomeIcon icon={faExclamationTriangle} color="black" />
+						</div>
+						<div className="project-description in-progress-description">
+							{description?.length > 150 
+								? description.substring(0, 150) + "..." 
+								: description}
+						</div>
+					</div>
+				</Link>
+			</div>
+		);
+	}
 
 	return (
 		<React.Fragment>
@@ -17,7 +36,11 @@ const Project = (props) => {
 							<img src={logo} alt="logo" />
 						</div>
 						<div className="project-title">{title}</div>
-						<div className="project-description">{description}</div>
+						<div className="project-description">
+							{description.length > 150 
+								? description.substring(0, 150) + "..." 
+								: description}
+						</div>
 						<div className="project-link">
 							<div className="project-link-icon">
 								<FontAwesomeIcon icon={faLink} />

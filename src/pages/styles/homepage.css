@@ -1,5 +1,47 @@
 @import "../../data/styles.css";
 
+.homepage-description-strong {
+	position: relative;
+}
+
+.homepage-description-strong::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 0;
+	height: 2px;
+	background-color: currentColor;
+	animation: underlineAnimation 3s forwards;
+}
+
+@keyframes underlineAnimation {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.homepage-title-class {
+	animation: titleAnimation 2s ease-in-out forwards;
+}
+
+@keyframes titleAnimation {
+	0% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	50% {
+		transform: scale(1.1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
 .homepage-logo-container {
 	display: flex;
 	justify-content: left;
@@ -44,11 +86,50 @@
 .homepage-image-wrapper {
 	overflow: hidden;
 	border-radius: 10%;
-	transform: rotate(3deg);
+	animation: attractiveAnimation 1s ease-in-out forwards;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+	transform: rotate(5deg);
+}
+
+@keyframes attractiveAnimation {
+	0% {
+		transform: rotate(-10deg) scale(0.9);
+		opacity: 0;
+	}
+	50% {
+		transform: rotate(5deg) scale(1.1);
+		opacity: 0.5;
+	}
+	100% {
+		transform: rotate(0deg) scale(1);
+		opacity: 1;
+	}
+}
+
+.homepage-description{
+	animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.homepage-image-wrapper:hover {
+	transform: rotate(0deg) scale(1.05);
+	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .homepage-image-wrapper img {
 	width: 100%;
+	height: 100%;
+	object-fit: cover;	
+	transform: translateY(20px);
 }
 
 .homepage-socials {
@@ -56,6 +137,34 @@
 	justify-content: left;
 	align-items: center;
 	padding-top: 30px;
+}
+
+.homepage-socials a {
+	opacity: 0;
+	animation: fadeInSocials 0.5s ease-in-out forwards;
+}
+
+.homepage-socials a:nth-child(1) {
+	animation-delay: 0.2s;
+}
+
+.homepage-socials a:nth-child(2) {
+	animation-delay: 0.4s;
+}
+
+.homepage-socials a:nth-child(3) {
+	animation-delay: 0.6s;
+}
+
+@keyframes fadeInSocials {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .homepage-social-icon {
