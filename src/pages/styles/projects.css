@@ -22,6 +22,11 @@
 	padding-top: 120px;
 }
 
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
 @media (max-width: 600px) {
 	.projects-container {
 		padding-top: 60px;

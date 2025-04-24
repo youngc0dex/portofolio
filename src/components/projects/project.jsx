@@ -6,9 +6,9 @@ import { faLink, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons
 import "./styles/project.css";
 
 const Project = (props) => {
-	const { logo, title, description, linkText, link, type } = props;
+	const { logo, title, description, linkText, link, type, id } = props;
 
-	if (type === "in-progress") {
+	if (id === null) {
 		return (
 			<div className="project in-progress-project">
 				<Link to={link}>

@@ -26,15 +26,16 @@ const AllProjects = () => {
 		<div className="all-projects-container">
 			{INFO.projects.map((project, index) => (
 				<div 
-					className={`all-projects-project ${visibleProjects.includes(index) ? 'fade-in' : 'hidden'}`} 
-					key={index}
+					className={`all-projects-project ${visibleProjects.includes(project.id) ? 'fade-in' : 'hidden'}`} 
+					key={project.id}
 				>
 					<Project
+						id={project.id}
 						logo={project.logo}
 						title={project.title}
 						description={project.description}
 						linkText={project.linkText}
-						link={project.link}
+						link={`/project/${project.id}`}
 						type={project.type}
 					/>
 				</div>
