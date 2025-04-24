@@ -14,6 +14,12 @@
     color: var(--secondary-color);
 }
 
+@media (max-width: 800px) {
+    .project-detail-logo-container {
+        display: none;
+    }
+}
+
 @keyframes simpleFadeIn {
     from {
         opacity: 0;

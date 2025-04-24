@@ -3,7 +3,7 @@ const INFO = {
     title: "Prakasa Judha",
     name: "Prakasa Judha",
     email: "prakasajudha@gmail.com",
-    logo: "../logo.png",
+    logo: "../logo-prakas.png",
   },
 
   socials: {
@@ -173,18 +173,15 @@ const INFO = {
   projects: [
     {
       id: 1,
-      title: "Q100+",
+      title: "Bio Farma | Q100+",
       description:
         "Q100+ is a digitalization platform for the production area, encompassing the production process, testing, and product release. It is integrated with equipment to ensure data integrity, thereby providing information that aids decision-making.",
       logo: "q100-logo.png",
       linkText: "View Project",
       type: "in-progress",
       images: [
-        "q100-1.png",
-        "q100-2.png",
-        "q100-3.png",
-        "q100-4.png",
-        "q100-5.png",
+        "/projects/q100-1.png",
+        "/projects/q100-2.png",
       ],
       stack: [
         { title: "React Js", bgColor: "#61dafb", textColor: "#282c34" },
@@ -303,7 +300,7 @@ const INFO = {
     },
     {
       id: 2,
-      title: "Pertamina - Tracease",
+      title: "Pertamina | Tracease",
       description:
         "TracEase is a cutting-edge system specifically designed to oversee every stage of LPG gas cylinder distribution with a more structured management approach. Its primary goal is to ensure integrity while enhancing safety factors in the distribution of LPG cylinders. Through a real-time approach, TracEase provides instant access to information about inventory, location, and the current status of each gas cylinder.",
       logo: "tracease-logo.png",
@@ -313,6 +310,12 @@ const INFO = {
         { title: "React Js", bgColor: "#61dafb", textColor: "#282c34" },
         { title: "Next Js", bgColor: "#000000", textColor: "#ffffff" },
         { title: "Tailwind CSS", bgColor: "#38b2ac", textColor: "#ffffff" },
+      ],
+      images: [
+        "/projects/tracease-1.png",
+        "/projects/tracease-2.png",
+        "/projects/tracease-3.png",
+        "/projects/tracease-4.png",
       ],
       role: "Frontend Developer",
       summary: (
@@ -410,7 +413,7 @@ const INFO = {
     },
     {
       id: 3,
-      title: "Bio Meet",
+      title: "Biofarma | Bio Meet",
       description:
         "Bio Meet is an event management application designed to assist companies in organizing events, tracking attendance effortlessly, and utilizing the data within the app for various company-related personnel management purposes.",
       logo: "biomeet-logo.png",
@@ -422,6 +425,12 @@ const INFO = {
         { title: "Tailwind CSS", bgColor: "#06b6d4", textColor: "#ffffff" },
         { title: "Express Js", bgColor: "#ffffff", textColor: "#000000" }, 
         { title: "PostgreSQL", bgColor: "#336791", textColor: "#ffffff" },
+      ],
+      images: [
+        "/projects/biomeet-1.png",
+        "/projects/biomeet-2.png",
+        "/projects/biomeet-3.png",
+        "/projects/biomeet-4.png",
       ],
       role: "Fullstack Developer",
       summary: (
@@ -475,7 +484,7 @@ const INFO = {
     },
     {
       id: 4,
-      title: "PPID",
+      title: "Bio Farma | PPID",
       description:
         "PPID is a public information service application related to Bio Farma. Its goal is to provide the public with an overview and insights into various aspects concerning Bio Farma.",
       logo: "biofarma-logo.png",
@@ -485,6 +494,11 @@ const INFO = {
         { title: "React Js", bgColor: "#61dafb", textColor: "#282c34" },
         { title: "Next Js", bgColor: "#000000", textColor: "#ffffff" },
         { title: "Strapi", bgColor: "#2f2e8b", textColor: "#ffffff" },
+      ],
+      images: [
+        "/projects/ppid-1.png",
+        "/projects/ppid-2.png",
+        "/projects/ppid-3.png",
       ],
       role: "Fullstack Developer",
       summary: (
@@ -547,7 +561,7 @@ const INFO = {
     },
     {
       id: 5,
-      title: "BIND UI",
+      title: "Bio Farma | BIND UI",
       description:
         "Unifying Excellence in Healthcare Design BIND (Biofarma Innovative Next-level Design) A comprehensive design system empowering Bio Farma Group's digital ecosystem, bridging innovation across Indonesia's leading pharmaceutical enterprises.",
       logo: "bind-logo.png",
@@ -557,6 +571,12 @@ const INFO = {
         { title: "React Js", bgColor: "#61dafb", textColor: "#282c34" },
         { title: "npmjs", bgColor: "#cb3837", textColor: "#ffffff" },
         { title: "JavaScript", bgColor: "#f7df1e", textColor: "#000000" },
+      ],
+      images: [
+        "/projects/bind-1.png",
+        "/projects/bind-2.png",
+        "/projects/bind-3.png",
+        "/projects/bind-4.png",
       ],
       role: "Supervisor / Project Manager",
       summary: (
@@ -610,6 +630,12 @@ const INFO = {
         { title: "Tailwind CSS", bgColor: "#38b2ac", textColor: "#ffffff" },
       ],
       role: "Frontend Developer",
+      images: [
+        "/projects/manucentric-1.png",
+        "/projects/manucentric-2.jpg",
+        "/projects/manucentric-3.jpg",
+        "/projects/manucentric-4.jpg",
+      ],
       summary: (
         <>
           <span>
@@ -655,6 +681,12 @@ const INFO = {
         { title: "PHP", bgColor: "#777bb4", textColor: "#ffffff" },
         { title: "PostgreSQL", bgColor: "#336791", textColor: "#ffffff" },
       ],
+      images: [
+        "/projects/cordelia-1.png",
+        "/projects/cordelia-2.png",
+        "/projects/cordelia-3.png",
+        "/projects/cordelia-4.png",
+      ],
       role: "Fullstack Developer",
       summary: <>
           <span>
@@ -699,6 +731,11 @@ const INFO = {
         { title: "Bootstrap", bgColor: "#563d7c", textColor: "#ffffff" },
         { title: "PHP", bgColor: "#777bb4", textColor: "#ffffff" },
         { title: "PostgreSQL", bgColor: "#336791", textColor: "#ffffff" },
+      ],
+      images: [
+        "/projects/gradasigo-1.png",
+        "/projects/gradasigo-2.png",
+        "/projects/gradasigo-3.png",
       ],
       role: "Fullstack Developer",
       summary: (

@@ -11,8 +11,30 @@ import SEO from "../data/seo";
 
 import "./styles/projects.css";
 import "./styles/projectDetails.css";
+import Carousel from "react-multi-carousel";
 import Badge from "../components/common/badge";
+
+
 const ProjectDetail = () => {
+	const responsive = {
+		superLargeDesktop: {
+		  breakpoint: { max: 4000, min: 3000 },
+		  items: 2
+		},
+		desktop: {
+		  breakpoint: { max: 3000, min: 1024 },
+		  items: 2
+		},
+		tablet: {
+		  breakpoint: { max: 1024, min: 464 },
+		  items: 2
+		},
+		mobile: {
+		  breakpoint: { max: 464, min: 0 },
+		  items: 1
+		}
+	  };
+
     const { id } = useParams();
     const [visibleElements, setVisibleElements] = useState([]);
 
@@ -50,13 +72,36 @@ const ProjectDetail = () => {
 								{currentData.title} 
 							</div>
 
-							<div style={{position: "relative"}}><img style={{position: "absolute", top: "0", left: "90px"}} src={`/${currentData.logo}`} alt="project-logo" className="project-detail-logo" /></div>
+							<div className="project-detail-logo-container" style={{position: "relative"}}><img style={{position: "absolute", top: "0", left: "90px"}} src={`/${currentData.logo}`} alt="project-logo" className="project-detail-logo" /></div>
 						</div>
-						
 
 						<div className={`subtitle projects-subtitle fade-element`}>
 							{currentData.description}
 						</div>
+
+						{currentData?.images && currentData.images.length > 0 && (
+								<div style={{ padding: "1em 0", height: "300px" , width: "100%"}}>
+									<Carousel 
+										responsive={responsive} 
+										showDots={true}
+										keyBoardControl={true}
+										customTransition="all 1"
+										transitionDuration={500}
+										containerClass="carousel-container"
+										removeArrowOnDeviceType={["tablet", "mobile"]}
+									>
+										{currentData.images.map((image, index) => (
+											<div key={index} style={{paddingRight:'100px'}}>
+												<img
+													style={{height: "300px", width: "450px", objectFit: "contain"}}
+													src={image}
+													alt={`Project image ${index + 1}`}
+												/>
+											</div>
+										))}
+									</Carousel>
+								</div>
+							)}
 
 						<div className={`projects-stack-container fade-element`} style={{marginBottom: "20px"}}>
 							{currentData.stack.map((item, index) => (

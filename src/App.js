@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import ReactGA from "react-ga4";
+import "react-multi-carousel/lib/styles.css";
 
 import Homepage from "./pages/homepage";
 import About from "./pages/about";
