@@ -5,9 +5,9 @@
 	"author": {
 		"name": "Prakasa Judha",
 		"email": "prakasajudha@gmail.com",
-		"url": "https://youngc0dex.github.io/portofolio/"
+		"url": "https://prakasajudha.vercel.app/"
 	},
-	"homepage": "https://youngc0dex.github.io/portofolio/",
+	"homepage": "https://prakasajudha.vercel.app/",
 	"license": "MIT",
 	"private": true,
 	"dependencies": {

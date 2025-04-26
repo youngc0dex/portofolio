@@ -3,11 +3,11 @@ const INFO = {
     title: "Prakasa Judha",
     name: "Prakasa Judha",
     email: "prakasajudha@gmail.com",
-    logo: "/logo-prakas.png",
+    logo: "logo-prakas.png",
   },
 
   socials: {
-    github: "https://github.com/youngc0dex",
+    github: "https://github.com/prakasajudha",
     linkedin: "https://www.linkedin.com/in/prakasa-judha-71858a134/",
     instagram: "https://www.instagram.com/prakasajudha/",
     facebook: "https://www.facebook.com/prakasajudha/",
