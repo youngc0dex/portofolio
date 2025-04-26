@@ -5,6 +5,7 @@ import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
 import Socials from "../components/about/socials";
+import { getImagePath } from "../utils/imgPath";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
@@ -71,7 +72,7 @@ const About = () => {
                         className={`skill-item ${visibleSkills.includes(skill.title) ? 'skill-fade-in' : 'skill-hidden'}`} 
                         key={skill.title}
                       >
-                        <img src={skill.image} alt={skill.title} />
+                        <img src={skill.image.startsWith('http') ? skill.image : getImagePath(skill.image)} alt={skill.title} />
                       </div>
                     ))}
                   </div>
@@ -81,7 +82,7 @@ const About = () => {
               <div className="about-left-side">
                 <div className="about-image-container">
                   <div className="about-image-wrapper">
-                    <img src="about-pp.jpg" alt="about" className="about-image" />
+                    <img src={getImagePath("about-pp.jpg")} alt="about" className="about-image" />
                   </div>
                 </div>
 

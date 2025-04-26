@@ -14,6 +14,7 @@ import NavBar from "../components/common/navBar";
 import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
 import AllProjects from "../components/projects/allProjects";
+import { getImagePath } from "../utils/imgPath";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
@@ -102,7 +103,7 @@ const Homepage = () => {
 								<div className="homepage-image-container">
 									<div className="homepage-image-wrapper">
 										<img
-											src="homepage.jpg"
+											src={getImagePath("homepage.jpg")}
 											alt="about"
 											className="homepage-image"
 										/>

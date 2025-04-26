@@ -13,7 +13,7 @@ import "./styles/projects.css";
 import "./styles/projectDetails.css";
 import Carousel from "react-multi-carousel";
 import Badge from "../components/common/badge";
-
+import { getImagePath } from "../utils/imgPath";
 
 const ProjectDetail = () => {
 	const responsive = {
@@ -94,7 +94,7 @@ const ProjectDetail = () => {
 											<div key={index} style={{paddingRight:'100px'}}>
 												<img
 													style={{height: "300px", width: "450px", objectFit: "contain"}}
-													src={image}
+													src={getImagePath(image)}
 													alt={`Project image ${index + 1}`}
 												/>
 											</div>

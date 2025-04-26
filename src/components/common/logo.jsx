@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import INFO from "../../data/user";
+import { getImagePath } from "../../utils/imgPath";
 
 import "./styles/logo.css";
 
@@ -13,7 +14,7 @@ const Logo = (props) => {
 	}
 
 	const imageElement = (
-		<img src={INFO.main.logo} alt="logo" className="logo" width={width} />
+		<img src={getImagePath(INFO.main.logo)} alt="logo" className="logo" width={width} />
 	);
 
 	return (

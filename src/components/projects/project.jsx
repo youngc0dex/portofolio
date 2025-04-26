@@ -2,11 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { getImagePath } from "../../utils/imgPath";
 
 import "./styles/project.css";
 
 const Project = (props) => {
 	const { logo, title, description, linkText, link, type, id } = props;
+
+	// Process logo path to ensure it works with GitHub Pages
+	const processedLogo = logo?.startsWith('http') ? logo : (logo ? getImagePath(logo) : null);
 
 	if (id === null) {
 		return (
@@ -33,7 +37,7 @@ const Project = (props) => {
 				<Link to={link}>
 					<div className="project-container">
 						<div className="project-logo">
-							<img src={logo} alt="logo" />
+							<img src={processedLogo} alt="logo" />
 						</div>
 						<div className="project-title">{title}</div>
 						<div className="project-description">

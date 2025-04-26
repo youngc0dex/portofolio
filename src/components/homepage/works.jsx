@@ -2,6 +2,7 @@ import React from "react";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 import Card from "../common/card";
+import { getImagePath } from "../../utils/imgPath";
 
 import "./styles/works.css";
 
@@ -15,7 +16,7 @@ const Works = () => {
 					<div className="works-body">
 						<div className="work">
 							<img
-								src="./biofarma.jpg"
+								src={getImagePath("biofarma.jpg")}
 								alt="biofarma"
 								className="work-image"
 							/>
@@ -28,7 +29,7 @@ const Works = () => {
 
 						<div className="work">
 							<img
-								src="./manucentric-logo.png"
+								src={getImagePath("manucentric-logo.png")}
 								alt="manucentric"
 								className="work-image"
 							/>
@@ -41,7 +42,7 @@ const Works = () => {
 
 						<div className="work">
 							<img
-								src="./btpn.png"
+								src={getImagePath("btpn.png")}
 								alt="btpn"
 								className="work-image"
 							/>
