@@ -11,6 +11,7 @@ import ReadArticle from "./pages/readArticle";
 import Contact from "./pages/contact";
 import Notfound from "./pages/404";
 import ProjectDetail from "./pages/projectDetail";
+import QrCode from "./pages/QrCode";
 import { TRACKING_ID } from "./data/tracking";
 import "./app.css";
 
@@ -31,6 +32,7 @@ function App() {
 				<Route path="/articles" element={<Articles />} />
 				<Route path="/article/:slug" element={<ReadArticle />} />
 				<Route path="/contact" element={<Contact />} />
+				<Route path="/qrcode" element={<QrCode />} />
 				<Route path="*" element={<Notfound />} />
 			</Routes>
 		</div>

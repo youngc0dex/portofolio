@@ -1,0 +1,133 @@
+.qrcode-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.qrcode-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 2em
+}
+
+.qrcode-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--primary-color, #333);
+}
+
+.qrcode-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+.qrcode-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh;
+    width: auto;
+    object-fit: contain;
+    animation: imageAppear 1.5s ease-out forwards, imagePulse 2s ease-in-out infinite 1.5s;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.qrcode-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 2rem auto;
+    color: var(--text-color, #666);
+    padding: 0 1rem;
+}
+
+@keyframes imageAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes imagePulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .qrcode-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .qrcode-image {
+        max-height: 40vh;
+    }
+    
+    .qrcode-subtitle {
+        font-size: 1rem;
+        margin: 1.5rem auto;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .qrcode-content {
+        padding: 1rem 0.5rem;
+    }
+    
+    .qrcode-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .qrcode-image {
+        max-height: 35vh;
+    }
+    
+    .qrcode-subtitle {
+        font-size: 0.95rem;
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 320px) {
+    .qrcode-title {
+        font-size: 1.5rem;
+    }
+    
+    .qrcode-image {
+        max-height: 30vh;
+    }
+    
+    .qrcode-subtitle {
+        font-size: 0.9rem;
+    }
+} 
